@@ -1,0 +1,43 @@
+package com.itgi.repository.impl;
+
+import com.itgi.entity.KycDetailInd;
+import com.itgi.entity.KycDocument;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//@org.springframework.beans.factory.annotation.Autowired(required=true)
+
+@Component
+public class KycRepositoryImpl //implements KycRepository
+{
+    private static List<KycDetail> KycDTOList;
+
+    static {
+        KycDTOList = new ArrayList<>();
+        KycDetail KycDto = new KycDetail();
+        // String clientType;
+        KycDto.setClientType("UYRX3OGWABGZOP");
+        //String firstName;
+        KycDto.setFirstName("JON");
+        //String date of Birth;
+        KycDto.setDateofBirth("1/1/1991");
+        //String mobileNumber;
+        KycDto.setMobileNumber("9069800010");
+        // String emailAddress;
+        KycDto.setEmailAddress("rere4199@gmail.com");
+
+        //String country;
+        KycDto.setCountry("INDIA");
+        List<KycDocument> kycDocuments;
+        KycDTOList.add(KycDto);
+    }
+
+
+    public List<KycDetail> findAllOwners() {
+
+        return KycDTOList;
+
+    }
+}
